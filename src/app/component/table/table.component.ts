@@ -17,7 +17,7 @@ export class TableComponent {
 
   customerlist !: Customer[];
   dataSource: any;
-  displayedColumns: string[] = ["code", "name", "email", "phone", "status", "action"];
+  displayedColumns: string[] = ["code", "fullname","username","employeeno", "email", "status", "action"];
   @ViewChild(MatPaginator) paginatior !: MatPaginator;
   @ViewChild(MatSort) sort !: MatSort;
 

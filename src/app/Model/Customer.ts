@@ -1,12 +1,14 @@
 export interface Customer {
     id: string;
-    name: string;
+    fullname: string;
+    username: string;
+    employeeno:string;
     email: string;
-    phone: string;
     active: string
 }
 
 export interface Country{
     code:string,
-    name:string
+    name:string,
+
 }

@@ -1,0 +1,52 @@
+<div class="auth-container authBackground">
+    <div class="row auth-main">
+      <div class="col form-box">
+        <div class="form-section">
+          <div class="auth-wrapper">
+            <h6 class="mb-4">COLLATERAL MANAGEMENT SOLUTION SYSTEM</h6>
+    
+            <p style="color: #000000">Enter your credentials below:</p>
+    
+            <form (ngSubmit)="onSubmit()">
+              <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2">
+                  <mat-form-field appearance="outline">
+                    <mat-label>Enter Username/Email</mat-label>
+                    <input matInput [(ngModel)]="username" name="username" required />
+                    <mat-icon matSuffix>account_circle</mat-icon>
+                    <mat-error *ngIf="!username">Username is required</mat-error>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2">
+                  <mat-form-field appearance="outline">
+                    <mat-label>Enter Password</mat-label>
+                    <input matInput [(ngModel)]="password" name="password" type="password" required />
+                    <mat-icon matSuffix (click)="togglePasswordVisibility()">
+                      {{ hide ? "visibility_off" : "visibility" }}
+                    </mat-icon>
+                    <mat-error *ngIf="!password">Password is required</mat-error>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="badge badge-solid-green mb-3">
+                <a routerLink="forgot-password" style="color: #000000">Forgot Your Password?</a>
+              </div>
+              <div *ngIf="error" class="alert alert-danger mt-1 mb-1">
+                {{ error }}
+              </div>
+              <div class="container-auth-form-btn">
+                <div style="text-align: center">
+                  <button mat-raised-button color="" [class.auth-spinner]="loading" [disabled]="loading || !username || !password" class="auth-form-btn" type="submit">
+                    LOGIN
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

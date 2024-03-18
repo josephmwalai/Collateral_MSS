@@ -10,3 +10,8 @@ th{
     background-color: black !important;
     color: white;
 }
+mat-icon{
+    position: absolute;
+    top: 30%;
+    right: 0px;
+}

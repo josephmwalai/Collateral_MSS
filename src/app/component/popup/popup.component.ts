@@ -26,8 +26,7 @@ export class PopupComponent implements OnInit {
   setpopupdata(code: any) {
     this.service.GetCustomerbycode(code).subscribe(item => {
       this.editdata = item;
-      this.myform.setValue({name:this.editdata.name,email:this.editdata.email,phone:this.editdata.phone,
-      status:this.editdata.status})
+      this.myform.setValue({fullname:this.editdata.fullname, username:this.editdata.username, email:this.editdata.email, employeeno:this.editdata.employeeno,status:this.editdata.status})
     });
   }
 
@@ -36,9 +35,10 @@ export class PopupComponent implements OnInit {
   }
 
   myform = this.buildr.group({
-    name: this.buildr.control(''),
+    fullname: this.buildr.control(''),
+    username: this.buildr.control(''),
     email: this.buildr.control(''),
-    phone: this.buildr.control(''),
+    employeeno: this.buildr.control(''),
     status: this.buildr.control(true)
   });
 
